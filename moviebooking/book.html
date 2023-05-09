@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookYourShow</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Joan', serif;
+}
+
+a {
+    text-decoration: none;
+    color: #adadad;
+}
+
+.btn {
+    display: inline-block;
+    padding: .5rem 1rem;
+    background-color: #cd8c38;
+    border-radius: 2rem;
+    color: #1e1f26;
+    transition: .3s;
+}
+
+.btn:hover {
+    background-color: #92601f;
+}
+
+.btn-l {
+    width: 100%;
+    text-align: center;
+}
+
+body {
+    background-color: #1e1f26;
+    display: grid;
+    grid-template-columns: 900px;
+    justify-content: space-evenly;
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+
+/* top bar */
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+}
+
+.left-content,
+.right-content {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    margin-right: 3rem;
+    color: #cd8c38;
+}
+
+.navigation {
+    display: flex;
+    list-style: none;
+}
+
+.navigation li {
+    margin-right: 1rem;
+}
+
+.navigation li a:hover {
+    color: #cd8c38;
+}
+
+.active {
+    color: #cd8c38;
+}
+
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+#movie-container1{
+    margin: 10px 0;
+    color: #cd8c38;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+    
+}
+.showcase{
+    background: rgba(0,0,0,0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color:white;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.showcase li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.showcase li small{
+    margin-left: 2px;
+}
+
+.btnn {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+ 
+form label {
+  display: block;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+form select {
+  margin-bottom: 20px;
+ 
+}
+
+#seats {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+
+
+.seat{
+    background-color:green;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.available {
+  background-color: green;
+}
+
+.booked {
+  background-color: blue;
+}
+.seat.selected{
+    background-color: yellow;
+}
+
+.seat.occupied{
+    background-color: blue;
+}
+
+.selected {
+  background-color: yellow;
+}
+
+
+#total {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+
+    </style>
+</head>
+
+<body>
+    <section class="top-bar">
+        <div class="left-content">
+            <h2 class="title">BookYourShow</h2>
+            <ul class="navigation">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html">Now Showing</a></li>
+                <li><a class="active" href="#">Tickets</a></li>
+                
+            </ul>
+        </div>
+    </section>
+    <section>
+        <marquee direction="left">
+            <span style="color:#E76161"><b>*Welcome to the Movies Land!!* </b></span>
+          </marquee>
+    </section>
+    <section id="movie-container1">
+            <form id="booking-form">
+                <span style="color:#e761c3">
+            <label for="movie-select">
+                Pick A Movie:
+            </label>
+                </span>
+            
+            <select id="movie-select">
+                <option value="1">Rudran</option>
+                <option value="2">The Kerala Story </option>
+                <option value="3">Kulasami </option>
+                <option value="4">Pathu Thala </option>
+                <option value="5">August 16 1947 </option>
+                <option value="6">Viduthalai </option>
+            </select><br>
+            <span style="color:#e761c3">
+            <label>
+                Choose A Genre:
+            </label>
+            </span>
+            <select id="genre">
+                <option value="">All genres</option>
+                <option value="Action">Action</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Drama">Drama</option>
+                <option value="Crime">Crime</option>
+              </select> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <span style="color:#e761c3">
+            <label>
+                Search:
+            </label>
+              </span>
+            <input type="text" id="search" placeholder="Search by title...">
+            <div id="results"></div>
+            <br>
+            <ul class="showcase">
+                <li>
+                    <div class="seat"></div>
+                    <small>available</small>
+                </li>
+                <li>
+                    <div class="seat occupied"></div>
+                    <small>Occupied</small>
+                </li>
+                <li>
+                    <div class="seat selected"></div>
+                    <small>Selected</small>
+                </li>
+            </ul>
+            <div id="seats"></div>
+        <div id="total"></div>
+        <div id="timer"></div><br>
+        <button type="submit" class="btnn">Book Now</button>
+            </form>
+    
+        
+
+    </section>
+   
+    
+      
+      <script src="./assets/script.js"></script>
+</body>
+
+</html>
