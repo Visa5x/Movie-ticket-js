@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Joan', serif;
+}
+
+a {
+    text-decoration: none;
+    color: #adadad;
+}
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    padding: 1.5rem;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    color:#6E8A3C;
+}
+
+
+.btn {
+    outline: none;
+    border: none;
+    border-radius: 5rem;
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    height: 3.5rem;
+    width: 9rem;
+    background: whitesmoke;
+    margin: 20px;
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #cd8c38;
+    height: 100%;
+    width: 0%;
+    -webkit-transition: .2s;
+    transition: .2s;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+
+
+body {
+    background-color: #1e1f26;
+    
+    justify-content: space-evenly;
+    font-size: medium;
+    
+    
+}
+
+
+/* top bar */
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1rem;
+}
+
+.left-content,
+.right-content {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    margin-right: 3rem;
+    color: #cd8c38;
+}
+
+.navigation {
+    display: flex;
+    list-style: none;
+}
+
+.navigation li {
+    margin-right: 1rem;
+}
+
+.navigation li a:hover {
+    color: #cd8c38;
+}
+
+.active {
+    color: #cd8c38;
+}
+
+
+
+
+#home {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: flex;
+}
+#home .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+}
+
+#home .video-container .vid {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+}
+
+.content {
+    text-align: center;
+    margin-top: 8.5rem;
+}
+
+.content h1 {
+    font-weight: bold;
+    color:  #cd8c38;
+    font-size: 3rem;
+}
+
+.content p {
+    color:  #cd8c38;
+    font-size: 2rem;
+    font-family: system-ui;
+}
+
